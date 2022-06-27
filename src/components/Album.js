@@ -1,4 +1,6 @@
+import '../styles/Album.css';
 import {useEffect, useState} from "react";
+import Tracklist from "./Tracklist";
 
 function Album(props) {
     const [data, setData] = useState();
@@ -26,14 +28,21 @@ function Album(props) {
             })
     }, [])
 
-    return (<div>
-        <div>{data && data.images[0].url}</div>
-        <h2>
-            {data && data.name}
-        </h2>
-        <p><b>Artists: </b>{data && data.artists[0].name}</p>
-        <p><b>Release date: </b>{data && data.release_date}</p>
-        <p><b>Tracks: </b> to be done later</p>
+    return (<div className="album-wrapper">
+        <div className="album-info">
+            <h2>
+                {data && data.name}
+            </h2>
+            <p><b>Artists: </b>{data && data.artists[0].name}</p>
+            <p><b>Release date: </b>{data && data.release_date}</p>
+            <p><b>Label: </b>{data && data.label}</p>
+            <Tracklist tracks={data && data.tracks}/>
+            <button className="album-info-button">Listen on Spotify!</button>
+
+        </div>
+        <div className="album-cover">
+            {data && <img src={data.images[0].url} alt="cover"/>}
+        </div>
     </div>);
 }
 

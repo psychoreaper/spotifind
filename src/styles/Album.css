@@ -1,0 +1,39 @@
+.album-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.album-info, .album-cover {
+    width: 750px;
+    margin: 100px 20px;
+    vertical-align: top;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.album-info {
+    text-align: left!important;
+
+}
+
+.album-info h2 {
+    font-size: 36px;
+}
+
+.album-info-button {
+    height: 50px;
+    width: 180px;
+    color: #fff;
+    background-color: #1DB954;
+    border: none;
+    font-size: 18px;
+}
+
+.album-cover img {
+    width: 450px;
+    height: 450px;
+    box-shadow: 0 8px 9px 0 rgba(0,0,0,.25);
+}
